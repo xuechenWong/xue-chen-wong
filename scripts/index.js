@@ -11,3 +11,19 @@ function log(){
 
 log('1');
 log('1,2');
+
+var bindObject = {
+	bar:1,
+	eventBind:function(){
+		$('.bindClass').on('click',function(){
+			console.log('bindClass click method invoked!');
+			console.log(this.bar);
+		}.bind(this));
+	}
+}
+
+bindObject.eventBind();
+
+
+
+

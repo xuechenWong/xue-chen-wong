@@ -24,3 +24,33 @@ function removeEvent(target,eventName,callback,useCapture){
 	}
 }
 
+// get all property of object:like windwo
+
+for(prop in window){
+	if(window.hasOwnProperty(prop)){
+		console.log("own property is :" + prop);
+	}else{
+		console.log("property from inherit: " + prop);
+	}
+}
+
+var con = '';
+$('.area-select option').each(function(){
+    var test = $(this).attr('value') + ":\"" + $(this).text() + "\"," + "\n";
+    con += test;
+})
+console.log(con);
+
+var fn = this, context = arguments[0], args = Array.prototype.slice.call(arguments, 1);
+
+
+// Closure practise code
+var cloe = "global param";
+function closure(){
+	var cloe = 'private param';
+	return function funcInClosure(){
+		console.log("closure param is:" + cloe);
+	}
+}
+var testClosure = closure();
+testClosure();
