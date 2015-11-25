@@ -1,29 +1,17 @@
 # xue-chen-wong
-just for test. to do later.
-
-#前端工作面试问题
-
-本文包含了一些用于考查候选者的前端面试问题。不建议对单个候选者问及每个问题 (那需要好几个小时)。只要从列表里挑选一些，就能帮助你考查候选者是否具备所需要的技能。
-
-**备注：** 这些问题中很多都是开放性的，可以引发有趣的讨论。这比直接的答案更能体现此人的能力。
-
 ## <a name='toc'>目录</a>
 
-  1. [常见问题](#general-questions)
-  1. [HTML 相关问题](#html-questions)
-  1. [CSS 相关问题](#css-questions)
-  1. [JS 相关问题](#js-questions)
-  1. [测试相关问题](#testing-questions)
-  1. [效能相关问题](#performance-questions)
-  1. [网络相关问题](#network-questions)
-  1. [代码相关问题](#coding-questions)
-  1. [趣味问题](#fun-questions)
+  [常见问题](#general-questions)
+  [HTML 相关问题](#html-questions)
+  [CSS 相关问题](#css-questions)
+  [JS 相关问题](#js-questions)
+  [测试相关问题](#testing-questions)
+  [效能相关问题](#performance-questions)
+  [网络相关问题](#network-questions)
+  [代码相关问题](#coding-questions)
+  [趣味问题](#fun-questions)
+  [练手项目](#project-examples)
 
-## 参与协作
-
-  1. [贡献者](#contributors)
-  1. [如何参与贡献](https://github.com/h5bp/Front-end-Developer-Interview-Questions/blob/master/CONTRIBUTING.md)
-  1. [许可协议](https://github.com/h5bp/Front-end-Developer-Interview-Questions/blob/master/LICENSE.md)
 
 #### <a name='general-questions'>常见问题：</a>
 
@@ -265,9 +253,40 @@ console.log('three');
 * 你最爱的 IE 特性是什么？
 * 你对咖啡有没有什么喜好？
 
+#### <a name='project-example'>练手项目：</a>
+文本操作
 
-#### <a name='contributors'>贡献者：</a>
+逆转字符串——输入一个字符串，将其逆转并输出。string-->array-->array.reverse-->array.join('');
+拉丁猪文字游戏——这是一个英语语言游戏。基本规则是将一个英语单词的第一个辅音音素的字母移动到词尾并且加上后缀-ay（譬如“banana”会变成“anana-bay”）。可以在维基百科上了解更多内容。
+统计元音字母——输入一个字符串，统计处其中元音字母的数量。更复杂点的话统计出每个元音字母的数量。
+判断是否为回文——判断用户输入的字符串是否为回文。回文是指正反拼写形式都是一样的词，譬如“racecar”。
+统计字符串中的单词数目——统计字符串中单词的数目，更复杂的话从一个文本中读出字符串并生成单词数目统计结果。
+文本编辑器——记事本类型的应用，可以打开、编辑、保存文本文档。可以增加单词高亮和其它的一些特性。
+RSS源创建器——可以从其它来源读取文本并将其以RSS或者Atom的格式发布出去。
+实时股价——可以查询股票当前价格。用户可以设定数据刷新频率，程序会用绿色和红色的箭头表示股价走势。
+访客留言簿/日志——允许人们添加评论或者日记，可以设置开启/关闭评论，并且可以记录下每一条目的时间。也可以做成喊话器。
+新闻和比分播报器——一个桌面应用，可以从网上收集新闻和比赛分数，将结果在屏幕上滚动播出。
+占星罗盘——用占星术来预测每天的运程。
+密码短信——可以将数据加密解密，并能将其发送给朋友。
+帮你挑礼物——输入一堆你可能会送的礼物，当有人过生日时，该程序会随机选择一样礼物。也可以加上一个额外功能，可以告知哪里可以弄到这个礼物。
+HTML生成器——将 TEXT 文档转换成HTML文件，对制作网页HTML文档很有用。
+CD-Key生成器——利用某种算法生成一个唯一的key。软件开发者可以用它来作为软件的激活器。
+正则表达式查询工具——用户可以输入一段文本，在另外的控件里输入一个正则表达式。运行以后会返回匹配的内容或者正则表达式中的错误。
 
-本文档始于 2009 年，是以下作者的合作成果：[@paul_irish](https://twitter.com/paul_irish) [@bentruyman](https://twitter.com/bentruyman) [@cowboy](https://twitter.com/cowboy) [@ajpiano](https://twitter.com/ajpiano) [@SlexAxton](https://twitter.com/slexaxton) [@boazsender](https://twitter.com/boazsender) [@miketaylr](https://twitter.com/miketaylr) [@vladikoff](https://twitter.com/vladikoff) [@gf3](https://twitter.com/gf3) [@jon_neal](https://twitter.com/jon_neal) [@sambreed](https://twitter.com/sambreed) 和 [@iansym](https://twitter.com/iansym)。
+网络
 
-时至今日，文档已经融入超过 [100 位开发者](https://github.com/h5bp/Front-end-Developer-Interview-Questions/graphs/contributors)的贡献。
+FTP工具——与远程网络服务器交互文件。
+原子钟校时——从网上同步原子钟时间。全世界有很多原子钟，可以把它们都列出来。
+聊天应用（IRC或者MSN风格的）——像IRC那样的聊天室软件或者MSN那样的实时聊天软件。更复杂一点的话，可以为聊天制定一套你自己的传输协议。
+获取当前天气——获取某个地区当前的天气情况。
+P2P文件共享应用——像LimeWire、FrostWire、Bearshare或者torrent风格的应用。
+端口扫描器——输入某个ip地址和端口区间，程序会逐个尝试区间内的端口，如果能成功连接的话就将该端口标记为open。
+邮件检查工具（POP3/IMAP）——用户输入一些账号信息，包括服务器、ip、协议类型（POP3或者IMAP），应用每隔一段时间就会检查下该账号下的邮箱。
+数据包嗅探器——侦测电脑上进出的数据包，获取诸如目的地和大小之类的信息。
+IP注册地查询——输入ip地址，查询该ip是在哪注册的。
+Whois查询工具——输入一个ip或者主机地址，通过whois查询并将结果返回。
+邮编查询——输入邮编，返回使用该邮编的地区名称。
+远程登入——远程登入桌面类型的应用，可以查看和控制远程电脑（假如你已经获得权限）。可能需要你自己的网络和两台电脑来进行测试。
+网站定时检查器——每隔一段时间或者在预定的时间尝试连接某个网站或者服务器，来检查它是否可以连上，如果连不上了会通过邮件或者桌面通知来告知你。
+小型网页服务器——简易版的网页服务器，可以存放包含Javascript和其它形式代码的HTML文件。复杂一点的话可以尝试流媒体视频、创建一种服务器端语言或者其它类型的流媒体。
+网络蜘蛛——一个可以自动执行网页上各种任务的程序，任务包括网站检查、页面抓取、数据摘要以及网络邮务。
