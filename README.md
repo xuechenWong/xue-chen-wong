@@ -149,6 +149,15 @@ just for test. to do later.
 * 什么是三元表达式 (Ternary expression)？“三元 (Ternary)” 表示什么意思？
 * 什么是 `"use strict";` ? 使用它的好处和坏处分别是什么？
 * 请实现一个遍历至 `100` 的 for loop 循环，在能被 `3` 整除时输出 **"fizz"**，在能被 `5` 整除时输出 **"buzz"**，在能同时被 `3` 和 `5` 整除时输出 **"fizzbuzz"**。
+  for(var i = 1; i <= 100; i++){
+    if(i % 15 == 0){
+      console.log('**"fizzbuzz"**' + i);
+    }else if(i % 3 == 0){
+      console.log('**"fizz"**' + i);
+    }else if(i % 5 == 0){
+      console.log('**"buzz"**' + i);
+    }
+  }
 * 为何通常会认为保留网站现有的全局作用域 (global scope) 不去改变它，是较好的选择？
 * 为何你会使用 `load` 之类的事件 (event)？此事件有缺点吗？你是否知道其他替代品，以及为何使用它们？
 * 请解释什么是单页应用 (single page app), 以及如何使其对搜索引擎友好 (SEO-friendly)。
