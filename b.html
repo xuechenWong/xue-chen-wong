@@ -1,0 +1,124 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Test Browsers</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <link rel="stylesheet" href="./styles/b.css">
+        <div class="container">
+            <div class="double-margin">测试IE6下双边距兼容性问题</div>
+        </div>
+
+        <div class="container-float">
+            <img src="./images/social_facebook_52px.png" class="img-float" alt="">
+            测试图片浮动文字不浮动的兼容性bug
+        </div>
+
+        <ul class="testUl">
+            <li>
+                <span class="testUI-span">测试IE6下li中双浮动或者更多浮动的bug</span>
+                <a href="#" target="_blank" class="testUl-left">浮动标题</a>
+            </li>
+        </ul>
+
+
+        <div class="testSpace"><img src="./images/social_facebook_52px.png" alt=""></div>
+        
+        <div class="minimal"></div>
+        <script src='./scripts/libs/jquery-1.9.1.min.js'></script>
+        <script src='./scripts/libs/knockout-3.0_0.js'></script>
+        <script src='./scripts/index.js'></script>
+        
+        
+    </body>
+</html>
+
+
+
+import java.io.FileInputStream;  
+import java.io.IOException;  
+import java.io.InputStream;  
+import java.util.Iterator;  
+import org.apache.poi.hssf.usermodel.HSSFCell;  
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;  
+import org.apache.poi.ss.usermodel.Cell;  
+import org.apache.poi.ss.usermodel.Row;  
+import org.apache.poi.ss.usermodel.Sheet;  
+import org.apache.poi.ss.usermodel.Workbook;  
+import org.apache.poi.xssf.usermodel.XSSFWorkbook; 
+
+public class ReadExcel {
+    public static void main(String args[]){
+        //读取excel表格    
+        System.out.println("表格读取开始!");
+        readXls("C:/Hanson/test.xlsx");
+        System.out.println("表格读取完毕!");
+    }
+    
+    public static void readXls(String fileName){
+        boolean isE2007 = false;    //判断是否是excel2007格式
+        if(fileName.endsWith("xlsx"))
+            isE2007 = true;
+//      System.out.println("是否是2007表格" + isE2007);
+        try {
+            InputStream input = new FileInputStream(fileName);  //建立输入流
+            Workbook wb  = null;
+            //根据文件格式(2003或者2007)来初始化
+            if(isE2007)
+                wb = new XSSFWorkbook(input);
+            else
+                wb = new HSSFWorkbook(input);
+            Sheet sheet = wb.getSheetAt(1);     //获得第一个表单
+            Iterator<Row> rows = sheet.rowIterator();   //获得第一个表单的迭代器
+            System.out.println("***车主名字以及当月运费详情***");
+            while (rows.hasNext()) {
+                
+                Row row = rows.next();  //获得行数据
+//              System.out.println("Row #" + row.getRowNum());  //获得行号从0开始
+                if(row.getRowNum() > 2){
+                    Iterator<Cell> cells = row.cellIterator();  //获得第一行的迭代器
+                    while (cells.hasNext()) {
+                        Cell cell = cells.next();
+                        if(cell.getColumnIndex() == 1){
+                            System.out.print("车主名字：" + cell.getStringCellValue() + "; ");
+                        }
+                        if(cell.getColumnIndex() == 4){
+                            System.out.print("车牌号码：" + cell.getStringCellValue() + "; ");
+                        }
+                        if(cell.getColumnIndex() == 5){
+                            System.out.print("当月运费：" + String.valueOf(cell.getNumericCellValue()));
+                        }                       
+//                      if(cell.getColumnIndex() == 5 || cell.getColumnIndex() == 1){
+//                          System.out.println("Cell #" + cell.getColumnIndex());
+//                          System.out.println("Cell Type is: " + cell.getCellType());
+//                          switch (cell.getCellType()) {   //根据cell中的类型来输出数据
+//                          case HSSFCell.CELL_TYPE_NUMERIC:
+//                              System.out.println(cell.getNumericCellValue());
+//                              break;
+//                          case HSSFCell.CELL_TYPE_STRING:
+//                              System.out.println(cell.getStringCellValue());
+//                              break;
+//                          case HSSFCell.CELL_TYPE_BOOLEAN:
+//                              System.out.println(cell.getBooleanCellValue());
+//                              break;
+//                          case HSSFCell.CELL_TYPE_FORMULA:
+//                              System.out.println(String.valueOf(cell.getNumericCellValue()));
+//                              break;
+//                          default:
+//                              System.out.println("unsuported sell type");
+//                          break;
+//                          }
+//                      }
+                        
+                    }
+                    System.out.print("\n");
+                }
+
+            }
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+    }
+}
+

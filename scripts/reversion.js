@@ -57,4 +57,60 @@
 		$('#latin-result').html(result);
 	})
 
+	console.log('********************数组快速复制********************');
+	var array = ['2','e','3','g'];
+	var newArray = array.concat(array);
+	console.log(newArray.join(','));
+
+
+	var arrayTest = [1,2,3,4,5,6,7,8,9,10];
+
+	//移除数组的最后一个元素，pop()方法类似于栈中的pop()方法，后进先出，所以是移除最后一个元素。
+	console.log('array pop() method: ' + arrayTest.pop());
+	//移除数组的第一个元素，得用shift()方法
+
+	console.log('array push() method: ' + arrayTest.push()); //返回的是数组的新长度值
+
+	console.log('array reverse() method: ' + arrayTest.reverse());//返回的是原数组，而不是新创建一个数组
+
+	// 数组切片，array.slice(start,end)
+	console.log('array slice method: ' + arrayTest.slice(0));
+	// 从一个数组中移除一个或多个元素，数组拼接方法：array.splice(index,howmany,element1,......,elementX)
+	console.log('array splice method: ' +　arrayTest.splice(2,0,'test','haha','splice'));
+	console.log(arrayTest);
+
+
+
+	// Difference between call and apply method
+	function People(){
+
+	}
+
+	People.prototype = {
+		age: "30",
+		say: function(){
+			console.log('people age is :' + this.age);
+		}
+	}
+
+	var Hanson = new People();
+	Hanson.say();
+
+	var Qin = {
+		age: '29'
+	}
+
+	People.prototype.say.call(Qin);
+	People.prototype.say.apply(Qin);
+
+
+	function add(numA,numB){
+		console.log(this.original + numA + numB);
+	}
+
+	add(2,3);
+	var obj1 = {original:10};
+	add.call(obj1,2,3);
+	add.apply(obj1,[2,3]);
+	add.bind(obj1)(2,3);
 })();

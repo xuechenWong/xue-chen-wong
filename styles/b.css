@@ -1,0 +1,15 @@
+.container{position:relative;width:200px;height:200px;background:red;margin-bottom:50px;}
+.container .double-margin{width:100px;float:left;margin-left:50px;background:blue;_display:inline;}
+
+.container-float{width:500px;height:50px;background:red;}
+.container-float div{background:red;width:300px;}
+.container-float .img-float{float:left;}
+
+.testUl{list-style:none;margin:0;}
+.testUl li{vertical-align:bottom;background:red;height:20px;}
+.testUl .testUI-span,.testUl .testUi-span,.testUl .testUl-left{float:left;}
+
+.testSpace{background:yellow;}
+.testSpace img{height:100%;}
+
+.minimal{height:8px;background:red;}
