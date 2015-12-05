@@ -4,7 +4,7 @@
 		return document.getElementById(id);
 	}
 
-
+	var tt = 'https://github.com/jsfront/src/blob/master/qq.md';
 })();
 
 (function(){
