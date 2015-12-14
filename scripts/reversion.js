@@ -102,7 +102,7 @@
 
 	People.prototype.say.call(Qin);
 	People.prototype.say.apply(Qin);
-
+	People.prototype.say.bind(Qin)();
 
 	function add(numA,numB){
 		console.log(this.original + numA + numB);
@@ -113,4 +113,16 @@
 	add.call(obj1,2,3);
 	add.apply(obj1,[2,3]);
 	add.bind(obj1)(2,3);
+
+
+	function justFun(){
+		var x = 1;
+		var func1 = function(){
+			alert(x);
+		}
+		return func1;
+	}
+
+	var testJust = justFun();
+	testJust();
 })();
